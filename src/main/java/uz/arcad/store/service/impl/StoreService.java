@@ -1,4 +1,9 @@
-package uz.arcad.store.servise.api.impl;
+package uz.arcad.store.service.impl;
+
 
 public interface StoreService {
+
+    String getCart();
+
+    void addItemsToCart(Integer prodID, Integer prodCount);
 }
