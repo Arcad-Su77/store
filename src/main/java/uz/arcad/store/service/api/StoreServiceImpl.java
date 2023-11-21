@@ -11,15 +11,14 @@ public class StoreServiceImpl implements StoreService {
         this.cart = cart;
     }
 
-
     @Override
-    public String getCart() {
-        return null;
+    public String printCart() {
+        return cart.getCart().toString();
     }
 
     @Override
-    public void addItemsToCart(Integer prodID, Integer prodCount) {
-
+    public boolean addItemsToCart(Integer prodID, Integer prodCount) {
+        return cart.add(prodID, prodCount);
     }
 
 }

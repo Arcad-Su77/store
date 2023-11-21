@@ -3,7 +3,7 @@ package uz.arcad.store.service.impl;
 
 public interface StoreService {
 
-    String getCart();
+    String printCart();
 
-    void addItemsToCart(Integer prodID, Integer prodCount);
+    boolean addItemsToCart(Integer prodID, Integer prodCount);
 }

@@ -15,8 +15,14 @@ public class StoreControler {
         this.storeService = storeService;
     }
     @GetMapping("/add")
-    public void addItemsToCart(@RequestParam("ID") Integer prodID,
+    public String addItemsToCart(@RequestParam("ID") Integer prodID,
                                @RequestParam("Count") Integer prodCount) {
-        storeService.addItemsToCart(prodID, prodCount);
+        return (storeService.addItemsToCart(prodID, prodCount))
+                ? "Корзина пополнена" : "Попалнение не удачное";
+    }
+
+    @GetMapping("/cart")
+    public String printCart() {
+        return storeService.printCart();
     }
 }
